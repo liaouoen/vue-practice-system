@@ -1,13 +1,14 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-aside width="200px">
+      <el-aside :width="$store.state.isCollapse ? '180px' : '64px'">
         <CommonAside></CommonAside>
       </el-aside>
       <el-container>
         <el-header>
           <CommonHeader></CommonHeader>
         </el-header>
+        <CommonTag></CommonTag>
         <el-main>
           <router-view></router-view>
         </el-main>
@@ -20,10 +21,12 @@
 import { defineComponent } from "vue";
 import CommonHeader from "../components/CommonHeader.vue";
 import CommonAside from "../components/CommonAside.vue";
+import CommonTag from "../components/CommonTag.vue";
 export default defineComponent({
   components: {
     CommonHeader,
     CommonAside,
+    CommonTag,
   },
 });
 </script>
